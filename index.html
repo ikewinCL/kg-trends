@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K&amp;G Trends — Lo último en tendencias al mejor precio</title>
+<meta name="description" content="K&amp;G Trends: tecnología, hogar, gaming, belleza y más. Productos virales seleccionados a mano con envío a todo el país y los mejores precios.">
+<meta name="theme-color" content="#08060F">
+
+<!-- Redes sociales -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="K&amp;G Trends — Lo último en tendencias al mejor precio">
+<meta property="og:description" content="Productos virales seleccionados a mano. Tecnología, hogar, gaming, belleza y más.">
+<meta property="og:image" content="assets/img/logo.svg">
+
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- ══════════════ BARRA DE ANUNCIO ══════════════ -->
+<div class="anuncio">
+  <span>🚚 Envío gratis en productos seleccionados</span>
+  <span class="sep">•</span>
+  <span>🔥 Hasta 45% de descuento esta semana</span>
+  <span class="sep">•</span>
+  <span>⭐ +12 000 clientes felices</span>
+</div>
+
+<!-- ══════════════ CABECERA ══════════════ -->
+<header class="cabecera" id="cabecera">
+  <div class="contenedor">
+    <a href="#inicio" class="logo" aria-label="K&amp;G Trends — inicio">
+      <img src="assets/img/logo.svg" alt="K&amp;G Trends">
+    </a>
+
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#catalogo">Productos</a>
+      <a href="#como-funciona">Cómo comprar</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+
+    <div class="acciones">
+      <button class="icono-btn" id="btnFavoritos" aria-label="Ver mis favoritos" title="Mis favoritos">
+        ❤️<span class="contador" id="contadorFav">0</span>
+      </button>
+      <a href="#catalogo" class="btn btn-primario ocultar-movil" id="btnComprar">Ver ofertas</a>
+      <button class="icono-btn hamburguesa" id="btnMenu" aria-label="Abrir menú">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<div class="menu-movil" id="menuMovil">
+  <button class="cerrar-menu" id="cerrarMenu" aria-label="Cerrar menú">×</button>
+  <a href="#inicio">Inicio</a>
+  <a href="#categorias">Categorías</a>
+  <a href="#catalogo">Productos</a>
+  <a href="#como-funciona">Cómo comprar</a>
+  <a href="#faq">Preguntas</a>
+</div>
+
+<main>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="inicio">
+  <div class="contenedor">
+    <div>
+      <span class="eyebrow">✨ Nueva colección 2026</span>
+      <h1>Lo que está <span class="grad-txt">en tendencia</span>, antes que todos.</h1>
+      <p class="lead">
+        Seleccionamos a mano los productos más virales de AliExpress y Amazon,
+        comparamos vendedores y solo dejamos los que valen la pena.
+        Tú eliges, nosotros ya hicimos la búsqueda difícil.
+      </p>
+
+      <div class="hero-botones">
+        <a href="#catalogo" class="btn btn-primario">🛍️ Explorar productos</a>
+        <a href="#como-funciona" class="btn btn-fantasma">¿Cómo funciona?</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong class="grad-txt" data-contar="120">0</strong><span>Productos seleccionados</span></div>
+        <div class="stat"><strong class="grad-txt" data-contar="12000">0</strong><span>Clientes felices</span></div>
+        <div class="stat"><strong class="grad-txt" data-contar="48">0</strong><span>Marcas y tiendas</span></div>
+      </div>
+    </div>
+
+    <div class="hero-arte">
+      <div class="blob"></div>
+      <div class="tarjetas-flotantes">
+        <div class="cf-big">🛍️</div>
+        <div class="card-flota cf-1"><span class="ico">🎧</span><span><b>Audífonos TWS</b><small>S/ 89 · -40%</small></span></div>
+        <div class="card-flota cf-2"><span class="ico">⌚</span><span><b>Smartwatch GPS</b><small>S/ 129 · Top ventas</small></span></div>
+        <div class="card-flota cf-3"><span class="ico">🚚</span><span><b>Envío gratis</b><small>En productos seleccionados</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ BENEFICIOS ══════════════ -->
+<section class="beneficios">
+  <div class="contenedor reveal">
+    <div class="beneficios-grid">
+      <div class="beneficio">
+        <span class="ico">🔎</span>
+        <span><b>Curado a mano</b><small>Revisamos reseñas y vendedores antes de publicar.</small></span>
+      </div>
+      <div class="beneficio">
+        <span class="ico">💸</span>
+        <span><b>Mejor precio</b><small>Comparamos varias tiendas para dejarte la mejor oferta.</small></span>
+      </div>
+      <div class="beneficio">
+        <span class="ico">🛡️</span>
+        <span><b>Compra protegida</b><small>Pagas en AliExpress o Amazon, con su garantía oficial.</small></span>
+      </div>
+      <div class="beneficio">
+        <span class="ico">💬</span>
+        <span><b>Te asesoramos</b><small>¿Dudas con un producto? Escríbenos por WhatsApp.</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CATEGORÍAS ══════════════ -->
+<section class="seccion" id="categorias">
+  <div class="contenedor">
+    <div class="centrado reveal">
+      <span class="eyebrow">Explora</span>
+      <h2 class="titulo-seccion">Compra por <span class="grad-txt">categoría</span></h2>
+      <p class="sub-seccion">Encuentra rápido lo que buscas. Toca una categoría y el catálogo se filtra al instante.</p>
+    </div>
+    <div class="cats-grid reveal" id="gridCategorias"><!-- generado por JS --></div>
+  </div>
+</section>
+
+<!-- ══════════════ CATÁLOGO ══════════════ -->
+<section class="seccion" id="catalogo" style="padding-top:0">
+  <div class="contenedor">
+    <div class="centrado reveal">
+      <span class="eyebrow">🔥 Lo más buscado</span>
+      <h2 class="titulo-seccion">Nuestro <span class="grad-txt">catálogo</span></h2>
+      <p class="sub-seccion">Filtra, busca y ordena. Al tocar “Comprar” te llevamos directo a la tienda oficial del producto.</p>
+    </div>
+
+    <div class="barra-filtros">
+      <div class="chips" id="chipsCategorias"><!-- generado por JS --></div>
+      <div class="herramientas">
+        <div class="buscador">
+          <span class="lupa">🔍</span>
+          <input type="search" id="inputBuscar" placeholder="Buscar producto..." aria-label="Buscar producto">
+        </div>
+        <select class="orden" id="selectOrden" aria-label="Ordenar productos">
+          <option value="destacado">Destacados</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="rating">Mejor valorados</option>
+          <option value="descuento">Mayor descuento</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid-productos" id="gridProductos"><!-- generado por JS --></div>
+  </div>
+</section>
+
+<!-- ══════════════ OFERTA CON CONTADOR ══════════════ -->
+<section class="seccion" style="padding-top:0">
+  <div class="contenedor reveal">
+    <div class="oferta">
+      <div>
+        <span class="eyebrow">⏳ Por tiempo limitado</span>
+        <h2>Semana de <span class="grad-txt">locura</span>: hasta 45% off</h2>
+        <p>Los precios de estas ofertas cambian cuando termina la promoción de la tienda. Si te gusta algo, no lo dejes para mañana.</p>
+        <a href="#catalogo" class="btn btn-primario">Ver ofertas activas</a>
+      </div>
+      <div class="reloj" id="reloj">
+        <div class="caja"><b id="rDias">00</b><small>Días</small></div>
+        <div class="caja"><b id="rHoras">00</b><small>Horas</small></div>
+        <div class="caja"><b id="rMin">00</b><small>Min</small></div>
+        <div class="caja"><b id="rSeg">00</b><small>Seg</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CÓMO FUNCIONA ══════════════ -->
+<section class="seccion" id="como-funciona">
+  <div class="contenedor">
+    <div class="centrado reveal">
+      <span class="eyebrow">Súper simple</span>
+      <h2 class="titulo-seccion">Comprar en <span class="grad-txt">3 pasos</span></h2>
+      <p class="sub-seccion">Sin registros ni complicaciones. Tú compras en la tienda oficial, con toda su protección.</p>
+    </div>
+
+    <div class="pasos reveal">
+      <article class="paso">
+        <span class="num">1</span>
+        <h3>Elige tu producto</h3>
+        <p>Explora el catálogo, usa los filtros y guarda tus favoritos con el corazón para decidir con calma.</p>
+      </article>
+      <article class="paso">
+        <span class="num">2</span>
+        <h3>Toca “Comprar”</h3>
+        <p>Te llevamos al producto exacto en AliExpress o Amazon, ya verificado por nosotros.</p>
+      </article>
+      <article class="paso">
+        <span class="num">3</span>
+        <h3>Recíbelo en casa</h3>
+        <p>Pagas y sigues tu pedido en la tienda oficial. Si algo falla, tienes su garantía de devolución.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIOS ══════════════ -->
+<section class="seccion" style="padding-top:0">
+  <div class="contenedor">
+    <div class="centrado reveal">
+      <span class="eyebrow">Reseñas</span>
+      <h2 class="titulo-seccion">Lo que dicen <span class="grad-txt">nuestros clientes</span></h2>
+    </div>
+    <div class="testimonios reveal">
+      <article class="testi">
+        <span class="estrellas">★★★★★</span>
+        <p>“Compré los audífonos que recomendaron y llegaron en 12 días. La calidad por el precio es una locura.”</p>
+        <div class="quien"><span class="avatar">M</span><span><b>María Q.</b><small>Lima</small></span></div>
+      </article>
+      <article class="testi">
+        <span class="estrellas">★★★★★</span>
+        <p>“Me ahorraron horas buscando. Ya venían filtrados los vendedores buenos, eso vale oro.”</p>
+        <div class="quien"><span class="avatar">J</span><span><b>Jorge A.</b><small>Arequipa</small></span></div>
+      </article>
+      <article class="testi">
+        <span class="estrellas">★★★★☆</span>
+        <p>“El teclado mecánico llegó tal cual la foto. Les escribí por WhatsApp y me respondieron rapidísimo.”</p>
+        <div class="quien"><span class="avatar">C</span><span><b>Carla R.</b><small>Trujillo</small></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section class="seccion" id="faq" style="padding-top:0">
+  <div class="contenedor">
+    <div class="centrado reveal">
+      <span class="eyebrow">Dudas frecuentes</span>
+      <h2 class="titulo-seccion">Preguntas <span class="grad-txt">frecuentes</span></h2>
+    </div>
+
+    <div class="faq reveal">
+      <details class="faq-item" open>
+        <summary>¿Dónde hago el pago?</summary>
+        <div class="respuesta">El pago lo haces directamente en AliExpress o Amazon, con sus métodos oficiales y su protección al comprador. Nosotros no manejamos tu tarjeta ni tus datos.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto demora el envío?</summary>
+        <div class="respuesta">Depende del producto y del vendedor. Normalmente entre 7 y 20 días hábiles. En cada ficha te indicamos el tiempo estimado.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Los precios incluyen impuestos?</summary>
+        <div class="respuesta">Los precios son referenciales y pueden variar según promociones, tipo de cambio y aduanas. El precio final siempre es el que veas en la tienda al momento de pagar.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si el producto llega dañado?</summary>
+        <div class="respuesta">Se gestiona con la garantía de la tienda (devolución o reembolso). Escríbenos por WhatsApp y te acompañamos en el proceso paso a paso.</div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo pedir un producto que no está en la web?</summary>
+        <div class="respuesta">¡Claro! Mándanos el link o una foto por WhatsApp y te buscamos la mejor opción con buen vendedor y buen precio.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA FINAL ══════════════ -->
+<section class="seccion" style="padding-top:0">
+  <div class="contenedor reveal">
+    <div class="cta-final">
+      <span class="eyebrow">No te lo pierdas</span>
+      <h2 class="titulo-seccion">Recibe las <span class="grad-txt">mejores ofertas</span> cada semana</h2>
+      <p class="sub-seccion">Te avisamos cuando baje de precio algo bueno. Sin spam, prometido.</p>
+      <form class="form-news" id="formNews">
+        <input type="email" placeholder="tucorreo@ejemplo.com" required aria-label="Tu correo electrónico">
+        <button type="submit" class="btn btn-primario">Suscribirme</button>
+      </form>
+      <p class="nota-form">También puedes seguirnos en redes para ver los lanzamientos primero.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════ PIE ══════════════ -->
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-grid">
+      <div class="marca">
+        <img src="assets/img/logo.svg" alt="K&amp;G Trends" style="height:48px">
+        <p>Tu tienda de productos en tendencia. Seleccionamos, comparamos y te dejamos solo lo bueno.</p>
+        <div class="redes">
+          <a href="#" id="lnkInstagram" aria-label="Instagram" title="Instagram">📷</a>
+          <a href="#" id="lnkTiktok" aria-label="TikTok" title="TikTok">🎵</a>
+          <a href="#" id="lnkFacebook" aria-label="Facebook" title="Facebook">👍</a>
+          <a href="#" id="lnkWhatsapp" aria-label="WhatsApp" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#catalogo">Todos los productos</a></li>
+          <li><a href="#categorias">Categorías</a></li>
+          <li><a href="#catalogo">Ofertas</a></li>
+          <li><a href="#" id="lnkFavFooter">Mis favoritos</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#como-funciona">Cómo comprar</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#faq">Envíos y entregas</a></li>
+          <li><a href="#faq">Devoluciones</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#" id="lnkWaFooter">WhatsApp</a></li>
+          <li><a href="#" id="lnkMail">Correo</a></li>
+          <li><a href="#faq">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <span>© <span id="anio">2026</span> K&amp;G Trends. Todos los derechos reservados.</span>
+      <span>Participamos en programas de afiliados de AliExpress y Amazon: podemos ganar una comisión por las compras realizadas, sin costo extra para ti.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ FLOTANTES ══════════════ -->
+<a href="#" class="wa" id="btnWhatsapp" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp">💬</a>
+<button class="arriba" id="btnArriba" aria-label="Volver arriba">↑</button>
+
+<!-- Panel de favoritos -->
+<aside class="panel" id="panelFav" aria-label="Mis favoritos">
+  <div class="panel-head">
+    <h3>❤️ Mis favoritos</h3>
+    <button class="icono-btn" id="cerrarPanel" aria-label="Cerrar">×</button>
+  </div>
+  <div class="panel-body" id="panelBody"></div>
+</aside>
+<div class="velo" id="velo"></div>
+
+<!-- Modal de producto -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-caja" id="modalCaja">
+    <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar">×</button>
+    <div class="modal-media" id="modalMedia"></div>
+    <div class="modal-info" id="modalInfo"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64" role="img" aria-label="K&amp;G Trends">
+  <defs>
+    <linearGradient id="kgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF2E93"/>
+      <stop offset="55%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+    <linearGradient id="kgText" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D9CFF7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Isotipo -->
+  <rect x="2" y="6" width="52" height="52" rx="16" fill="url(#kgGrad)"/>
+  <path d="M16 20 L16 44 M16 32 L27 20 M16 32 L28 44" stroke="#0B0714" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M46 26.5a7.5 7.5 0 1 0 0 11 h-4" stroke="#0B0714" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="46" cy="32" r="1.6" fill="#0B0714"/>
+
+  <!-- Logotipo -->
+  <text x="66" y="34" font-family="Outfit, Poppins, Segoe UI, sans-serif" font-size="26" font-weight="800" fill="url(#kgText)" letter-spacing="0.5">K&amp;G</text>
+  <text x="66" y="52" font-family="Outfit, Poppins, Segoe UI, sans-serif" font-size="15" font-weight="600" fill="#FF2E93" letter-spacing="6.5">TRENDS</text>
+</svg>
