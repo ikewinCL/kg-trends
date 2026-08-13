@@ -131,12 +131,15 @@ ul{ margin:0; padding:0; list-style:none; }
   transition:background .3s, border-color .3s;
 }
 .cabecera.fija{ background:rgba(8,6,15,.88); border-bottom-color:var(--line); }
-.cabecera .contenedor{ display:flex; align-items:center; gap:1.25rem; }
+/* space-between mantiene el logo a la izquierda y los botones a la derecha
+   aunque el <nav> esté oculto en móvil. No usar margin-left:auto en .nav:
+   al ocultarse, el empuje desaparece y los botones se pegan al logo. */
+.cabecera .contenedor{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
 
 .logo{ display:flex; align-items:center; flex-shrink:0; }
 .logo img{ height:44px; width:auto; }
 
-.nav{ display:flex; gap:.35rem; margin-left:auto; }
+.nav{ display:flex; gap:.35rem; }
 .nav a{
   padding:.5rem .85rem; border-radius:99px;
   font-size:.93rem; font-weight:600; color:var(--muted); white-space:nowrap;
@@ -144,7 +147,7 @@ ul{ margin:0; padding:0; list-style:none; }
 }
 .nav a:hover{ color:var(--txt); background:var(--surface); }
 
-.acciones{ display:flex; align-items:center; gap:.5rem; }
+.acciones{ display:flex; align-items:center; gap:.5rem; flex-shrink:0; }
 
 .icono-btn{
   position:relative;
@@ -171,15 +174,23 @@ ul{ margin:0; padding:0; list-style:none; }
 
 /* Menú móvil */
 .menu-movil{
-  position:fixed; inset:0; z-index:55;
+  position:fixed; inset:0; z-index:80;   /* por encima de la barra de anuncio (60) */
   background:rgba(8,6,15,.96); backdrop-filter:blur(10px);
   display:flex; flex-direction:column; justify-content:center; align-items:center; gap:.5rem;
   opacity:0; visibility:hidden; transition:opacity .3s, visibility .3s;
 }
 .menu-movil.abierto{ opacity:1; visibility:visible; }
-.menu-movil a{ font-family:'Outfit',sans-serif; font-size:1.6rem; font-weight:700; padding:.5rem 1rem; }
-.menu-movil a:hover{ color:var(--pink); }
-.cerrar-menu{ position:absolute; top:1.25rem; right:1.5rem; font-size:2rem; line-height:1; }
+.menu-movil a{ font-family:'Outfit',sans-serif; font-size:1.6rem; font-weight:700; padding:.7rem 1.5rem; }
+.menu-movil a:hover,.menu-movil a:active{ color:var(--pink); }
+.menu-movil .logo{ margin-bottom:1.5rem; }
+.menu-movil .logo img{ height:52px; }
+.cerrar-menu{
+  position:absolute; top:1.25rem; right:1.25rem;
+  width:44px; height:44px; border-radius:50%;
+  display:grid; place-items:center;
+  font-size:1.8rem; line-height:1;
+  background:var(--surface); border:1px solid var(--line);
+}
 
 /* ==========================================================================
    Hero
@@ -282,7 +293,9 @@ ul{ margin:0; padding:0; list-style:none; }
   display:flex; flex-wrap:wrap; gap:1rem; align-items:center; justify-content:space-between;
   margin:2rem 0 1.75rem;
 }
-.chips{ display:flex; gap:.5rem; flex-wrap:wrap; }
+/* min-width:0 es indispensable: sin él, un flex item crece hasta el ancho de
+   su contenido y desborda la página horizontalmente en móvil. */
+.chips{ display:flex; gap:.5rem; flex-wrap:wrap; min-width:0; max-width:100%; }
 .chip{
   padding:.5rem 1rem; border-radius:99px; font-size:.88rem; font-weight:600;
   background:var(--surface); border:1px solid var(--line); color:var(--muted);
@@ -619,14 +632,28 @@ select.orden option{ background:var(--bg-2); color:var(--txt); }
   .ocultar-movil{ display:none; }
 }
 
+/* Tablets (iPad vertical ~768px): sin esto caían en la regla base y salían
+   solo 2 tarjetas de ~350px de ancho. */
+@media (min-width: 761px) and (max-width: 1050px){
+  .grid-productos{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .cats-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+
 @media (max-width: 760px){
   .barra-filtros{ flex-direction:column; align-items:stretch; }
   .herramientas{ flex-direction:column; }
   .buscador input{ width:100%; }
   select.orden{ width:100%; }
-  .chips{ overflow-x:auto; flex-wrap:nowrap; padding-bottom:.4rem; -webkit-overflow-scrolling:touch; }
+  .chips{
+    width:100%; min-width:0;
+    overflow-x:auto; flex-wrap:nowrap; padding-bottom:.4rem;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;                    /* la barra se ve fea sobre el chip */
+  }
+  .chips::-webkit-scrollbar{ display:none; }
   .chip{ flex-shrink:0; }
-  .grid-productos{ grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:.9rem; }
+  /* Tablets y celulares anchos: que quepan las que entren, sin tarjetas gigantes */
+  .grid-productos{ grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.8rem; }
   .p-media .emoji{ font-size:3rem; }
   .p-nombre{ font-size:.9rem; }
   .p-precio .ahora{ font-size:1.25rem; }
@@ -634,6 +661,21 @@ select.orden option{ background:var(--bg-2); color:var(--txt); }
   .anuncio{ font-size:.76rem; }
   .anuncio .sep{ display:none; }
   .anuncio span:nth-child(n+2){ display:none; }
+}
+
+/* Celulares angostos (360px y menos): márgenes más justos para ganar ancho útil */
+@media (max-width: 480px){
+  .contenedor{ width:min(100% - 1.75rem, var(--max)); }
+  /* 2 columnas garantizadas: con auto-fill, un celular de 320px caía a 1 sola */
+  .grid-productos{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .logo img{ height:40px; }
+  .p-acciones .btn{ padding:.65rem .6rem; font-size:.82rem; }
+  .beneficios-grid{ padding:1.1rem; }
+  .paso{ padding:1.9rem 1.15rem 1.25rem; }
+  .testi,.cta-final{ padding:1.35rem; }
+  .oferta{ padding:1.5rem 1.25rem; }
+  .reloj .caja{ min-width:64px; padding:.55rem .35rem; }
+  .reloj .caja b{ font-size:1.45rem; }
 }
 
 @media (prefers-reduced-motion: reduce){
