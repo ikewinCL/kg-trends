@@ -1,7 +1,14 @@
 # K&G Trends 🛍️
 
+**En línea: <https://kygtrends.com>**
+
 Tienda de dropshipping / afiliados (AliExpress + Amazon). Sitio estático: solo HTML, CSS y
 JavaScript, sin base de datos ni servidor. Eso lo hace **gratis de hospedar y rapidísimo**.
+
+- Repositorio: `ikewinCL/kg-trends`, rama `main`
+- Hosting: GitHub Pages (gratis)
+- Dominio: `kygtrends.com`, registrado en Namecheap
+- El archivo `CNAME` de la raíz es lo que conecta el dominio. **No lo borres.**
 
 ```
 kg-trends/
