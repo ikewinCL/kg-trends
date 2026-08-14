@@ -68,6 +68,23 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    id: 46,
+    nombre: 'Masajeador inalámbrico de cuello y trapecio con amasamiento 4D',
+    categoria: 'fitness',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4SHYpp5',
+    img: 'https://ae01.alicdn.com/kf/Sa0667ef09f144bf7b4ef8561479e35f10.jpg_640x640.jpg',
+    emoji: '💆',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Masajeador inalámbrico para cuello, hombros y trapecio, con amasamiento 4D que imita el movimiento de unas manos y motor sin escobillas, más silencioso y duradero. Al ser inalámbrico lo usas mientras trabajas o ves televisión.',
+    destacado: true
+  },
+  {
     id: 45,
     nombre: 'Audífonos Baseus Bass EP10 Ultra con ANC y 65 h de batería',
     categoria: 'audio',
