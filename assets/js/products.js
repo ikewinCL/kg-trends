@@ -67,6 +67,40 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    id: 31,
+    nombre: 'Cactus en maceta para armar, micro bloques de construcción',
+    categoria: 'hogar',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c2RJ27F1',
+    img: 'https://ae01.alicdn.com/kf/Sb1482297d0e44c0b9eaf2ed3e40d03b2Z.jpg_640x640.jpg',
+    emoji: '🌵',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Cactus de micro bloques para armar y dejar en el escritorio: una planta que nunca se te va a secar. Entretiene mientras lo armas y queda como adorno. También sirve de regalo.',
+    destacado: true
+  },
+  {
+    id: 30,
+    nombre: 'Figura de capibara para armar, decoración de escritorio',
+    categoria: 'hogar',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4K09BvH',
+    img: 'https://ae01.alicdn.com/kf/Sa34117b8a5da42b6b6a9cd45ab2aee56u.jpg_640x640.jpg',
+    emoji: '🦫',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Capibara de bloques con su accesorio naranja, el meme hecho figura. Queda bien en el escritorio, en la repisa o como regalo para quien no para de mandarte capibaras.',
+    destacado: true
+  },
+  {
     id: 29,
     nombre: 'Juego de destornilladores magnéticos 40 en 1 con trinquete',
     categoria: 'tecnologia',
