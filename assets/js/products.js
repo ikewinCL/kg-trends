@@ -43,7 +43,7 @@ const CONFIG = {
   // escriben por correo. Al poner el número real (código de país sin el +,
   // ej. '51987654321') vuelven a WhatsApp automáticamente.
   whatsapp: '51999999999',          // <-- FALTA: tu número real
-  email: 'kyg.lozano.z@gmail.com',
+  email: 'kygtrends.contac@gmail.com',
   instagram: 'https://instagram.com/',
   tiktok: 'https://tiktok.com/',
   facebook: 'https://facebook.com/'
