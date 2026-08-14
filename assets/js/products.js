@@ -68,6 +68,40 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    id: 42,
+    nombre: 'Selladora al vacío eléctrica con cortador y modo seco o húmedo',
+    categoria: 'hogar',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4tgqyAb',
+    img: 'https://ae01.alicdn.com/kf/S617dec0444bb450caec85b98843e65abG.jpg_640x640.jpg',
+    emoji: '🍱',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Selladora al vacío de mesa con botones táctiles, cortador de bolsa integrado y modos para alimentos secos o húmedos. Saca el aire y sella de una pasada, así la comida dura mucho más en la refrigeradora o el congelador.',
+    destacado: true
+  },
+  {
+    id: 41,
+    nombre: 'Bomba selladora al vacío recargable con bolsas reutilizables',
+    categoria: 'hogar',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c3a7863H',
+    img: 'https://ae01.alicdn.com/kf/Sd3a5300d8ad74743bc7a53f7f28fa956w.png_640x640.png',
+    emoji: '🧊',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Bomba de aire recargable e inalámbrica que extrae el aire y sella sola. Viene con bolsas reutilizables, así que no gastas en repuestos cada vez. Ocupa poco y se guarda en un cajón.',
+    destacado: true
+  },
+  {
     // OJO: llegaron dos links distintos para este producto. Se usa el que
     // venía junto a la imagen, para que la foto y el destino coincidan.
     // El otro era https://s.click.aliexpress.com/e/_c3TrzYDh
