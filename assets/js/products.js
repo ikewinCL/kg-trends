@@ -317,6 +317,23 @@ const PRODUCTOS = [
     destacado: false
   },
   {
+    id: 25,
+    nombre: 'Esponja exfoliante 3D para ducha, elimina la piel muerta',
+    categoria: 'belleza',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4pD3Aqj',
+    img: 'https://ae01.alicdn.com/kf/S6f1b280373d24b41bc0ecf738df31e98d.jpg_640x640.jpg',
+    emoji: '🧽',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Esponja de textura 3D que exfolia mientras te bañas: arrastra la piel muerta y deja la piel suave, sin raspar. Hace buena espuma con poco jabón y se seca rápido.',
+    destacado: true
+  },
+  {
     id: 24,
     nombre: 'Soporte plegable de aluminio para laptop y tablet hasta 17"',
     categoria: 'tecnologia',
