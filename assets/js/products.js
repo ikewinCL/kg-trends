@@ -317,6 +317,23 @@ const PRODUCTOS = [
     destacado: false
   },
   {
+    id: 21,
+    nombre: 'Baseus power bank magnético del tamaño de una tarjeta',
+    categoria: 'tecnologia',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c3SFk8Sx',
+    img: 'https://ae01.alicdn.com/kf/Sfc55bd7b3d934a00a854a925db7c8b56e.jpg_640x640.jpg',
+    emoji: '🔋',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Batería externa magnética tan delgada como una tarjeta: se pega atrás del celular y carga sin cables. Hay dos versiones, 10000 mAh con PD de 27W y 5000 mAh con PD de 20W. Para iPhone 17 y Samsung compatibles con carga magnética.',
+    destacado: true
+  },
+  {
     id: 20,
     nombre: 'Cable UGREEN Uno USB-C a USB-C PD 100W de carga rápida',
     categoria: 'tecnologia',
