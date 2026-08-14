@@ -621,6 +621,41 @@ select.orden option{ background:var(--bg-2); color:var(--txt); }
 .reveal.visible{ opacity:1; transform:none; }
 
 /* ==========================================================================
+   Página individual de producto
+   ========================================================================== */
+.miga{ font-size:.85rem; color:var(--muted); margin-bottom:1.5rem; display:flex; flex-wrap:wrap; gap:.4rem; }
+.miga a{ color:var(--cyan); }
+.miga a:hover{ text-decoration:underline; }
+
+.ficha{
+  display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,4vw,3rem);
+  align-items:start;
+}
+.ficha-media{
+  border-radius:var(--r-lg); overflow:hidden;
+  background:linear-gradient(140deg, rgba(255,46,147,.22), rgba(139,92,246,.20), rgba(0,212,255,.20));
+  border:1px solid var(--line);
+  aspect-ratio:1; display:grid; place-items:center;
+}
+.ficha-media img{ width:100%; height:100%; object-fit:cover; }
+.ficha-media .emoji{ font-size:7rem; }
+
+.ficha-info h1{ font-size:clamp(1.5rem,3.4vw,2.2rem); margin:.4rem 0 .9rem; }
+.ficha-desc{ color:var(--muted); font-size:1rem; line-height:1.7; }
+.ficha-info .p-precio{ margin-top:1.2rem; }
+.ficha-info .p-precio .ahora{ font-size:1.8rem; }
+.ficha-info .btn-bloque{ margin-top:1.2rem; }
+
+/* El nombre del producto en las tarjetas ahora enlaza a su ficha */
+.p-nombre a{ color:inherit; }
+.producto:hover .p-nombre a{ color:var(--pink); }
+
+@media (max-width: 760px){
+  .ficha{ grid-template-columns:1fr; }
+  .ficha-media{ aspect-ratio:4/3; }
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 980px){

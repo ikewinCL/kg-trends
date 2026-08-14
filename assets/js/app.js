@@ -81,6 +81,19 @@
 
   const nombreTienda = t => (t === 'amazon' ? 'Amazon' : 'AliExpress');
 
+  /* Debe coincidir exactamente con slug() de tools/build-seo.js, que es quien
+     crea los archivos en /producto/. Si cambia allá, cambiar aquí. */
+  function rutaProducto(p) {
+    const base = p.nombre
+      .toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/["']/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .split('-').slice(0, 8).join('-');
+    return `/producto/${base}-${p.id}.html`;
+  }
+
   function media(p, claseEmoji) {
     return p.img
       ? `<img src="${escapar(p.img)}" alt="${escapar(p.nombre)}" loading="lazy"
@@ -215,7 +228,7 @@
 
         <div class="p-body">
           <span class="p-cat">${escapar(nombreCategoria(p.categoria))}</span>
-          <h3 class="p-nombre">${escapar(p.nombre)}</h3>
+          <h3 class="p-nombre"><a href="${rutaProducto(p)}">${escapar(p.nombre)}</a></h3>
 
           ${bloqueRating(p)}
           ${bloquePrecio(p)}
