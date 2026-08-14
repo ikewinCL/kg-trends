@@ -68,6 +68,45 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    // OJO: llegaron dos links distintos para este producto. Se usa el que
+    // venía junto a la imagen, para que la foto y el destino coincidan.
+    // El otro era https://s.click.aliexpress.com/e/_c3TrzYDh
+    id: 40,
+    nombre: 'Micrófono MAONO PD300X XLR y USB de 192 kHz para podcast',
+    categoria: 'audio',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c3s0cJMT',
+    img: 'https://ae01.alicdn.com/kf/S9527e909f53d41ba94b6ebe74385f5c8S.jpg_640x640.jpg',
+    emoji: '🎙️',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Micrófono dinámico con doble conexión XLR y USB, y grabación a 192 kHz / 24 bits. Pensado para podcast, creación de contenido y grabación en estudio casero.',
+    destacado: true
+  },
+  {
+    // Mismo caso: el otro link recibido era
+    // https://s.click.aliexpress.com/e/_c4eHIWhp
+    id: 39,
+    nombre: 'Brazo de micrófono FIFINE de perfil bajo con guía de cables',
+    categoria: 'audio',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4rQslz9',
+    img: 'https://ae01.alicdn.com/kf/S029d8c68a73f468c8a907eeddcccd5fbK.jpg_640x640.jpg',
+    emoji: '🎚️',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Brazo de suspensión de perfil bajo, que queda fuera de cuadro cuando grabas o transmites. Trae guía para ordenar el cable y soporte de escritorio. Compatible con los FIFINE Ampligame AM8, BM88 y K688.',
+    destacado: true
+  },
+  {
     id: 38,
     nombre: 'Micrófono inalámbrico MAONO PD200W USB y XLR para podcast',
     categoria: 'audio',
