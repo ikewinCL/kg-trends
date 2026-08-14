@@ -122,9 +122,17 @@
   }
 
   /* ---------- Categorías ---------- */
+  /* Solo se muestran las categorías que tienen al menos un producto. Una
+     categoría vacía lleva al visitante a una pantalla sin nada, así que se
+     queda oculta hasta que se le agregue el primer producto. */
+  const categoriasConProductos = () => CATEGORIAS.filter(c =>
+    c.id === 'todos' || PRODUCTOS.some(p => p.categoria === c.id));
+
   function pintarCategorias() {
+    const visibles = categoriasConProductos();
+
     // Tarjetas grandes (sin "todos")
-    $('#gridCategorias').innerHTML = CATEGORIAS
+    $('#gridCategorias').innerHTML = visibles
       .filter(c => c.id !== 'todos')
       .map(c => {
         const n = PRODUCTOS.filter(p => p.categoria === c.id).length;
@@ -136,7 +144,7 @@
       }).join('');
 
     // Chips del catálogo
-    $('#chipsCategorias').innerHTML = CATEGORIAS
+    $('#chipsCategorias').innerHTML = visibles
       .map(c => `<button class="chip${c.id === estado.categoria ? ' activo' : ''}" data-cat="${c.id}">
                    ${c.emoji} ${escapar(c.nombre)}
                  </button>`).join('');
@@ -310,17 +318,12 @@
     if (!$('#panelFav').classList.contains('abierto')) document.body.style.overflow = '';
   }
 
-  /* ---------- Contador de ofertas (72 h en bucle) ---------- */
-  function reloj() {
-    const ciclo = 72 * 60 * 60 * 1000;
-    const restante = ciclo - (Date.now() % ciclo);
-    const s = Math.floor(restante / 1000);
-    const dos = n => String(n).padStart(2, '0');
-
-    $('#rDias').textContent  = dos(Math.floor(s / 86400));
-    $('#rHoras').textContent = dos(Math.floor((s % 86400) / 3600));
-    $('#rMin').textContent   = dos(Math.floor((s % 3600) / 60));
-    $('#rSeg').textContent   = dos(s % 60);
+  /* ---------- Cifras reales del catálogo ---------- */
+  function pintarEstadisticas() {
+    const prod = $('#statProductos');
+    const cat  = $('#statCategorias');
+    if (prod) prod.textContent = PRODUCTOS.length;
+    if (cat)  cat.textContent  = categoriasConProductos().length - 1; // sin "Todos"
   }
 
   /* ---------- Números que suben ---------- */
@@ -505,10 +508,9 @@
     actualizarContador();
     pintarPanelFavoritos();
     enlacesContacto();
+    pintarEstadisticas();
     eventos();
     revelar();
     animarNumeros();
-    reloj();
-    setInterval(reloj, 1000);
   });
 })();

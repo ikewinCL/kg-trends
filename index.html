@@ -26,17 +26,17 @@
      el navegador del visitante, así que sin esto los cambios recién se ven
      un rato después. Al subir cambios hay que subir este número (v=2, v=3...)
      en las 3 etiquetas de este archivo y en el 404.html. -->
-<link rel="stylesheet" href="assets/css/styles.css?v=5">
+<link rel="stylesheet" href="assets/css/styles.css?v=6">
 </head>
 <body>
 
 <!-- ══════════════ BARRA DE ANUNCIO ══════════════ -->
 <div class="anuncio">
-  <span>🚚 Envío gratis en productos seleccionados</span>
+  <span>🛡️ Compra protegida en AliExpress</span>
   <span class="sep">•</span>
-  <span>🔥 Hasta 45% de descuento esta semana</span>
+  <span>🔎 Vendedores verificados uno por uno</span>
   <span class="sep">•</span>
-  <span>⭐ +12 000 clientes felices</span>
+  <span>🌎 Envío a todo el Perú</span>
 </div>
 
 <!-- ══════════════ CABECERA ══════════════ -->
@@ -94,10 +94,12 @@
         <a href="#como-funciona" class="btn btn-fantasma">¿Cómo funciona?</a>
       </div>
 
+      <!-- Sin cifras de clientes ni de ventas: la tienda recién arranca y
+           poner números inventados es lo primero que un comprador detecta. -->
       <div class="stats">
-        <div class="stat"><strong class="grad-txt" data-contar="120">0</strong><span>Productos seleccionados</span></div>
-        <div class="stat"><strong class="grad-txt" data-contar="12000">0</strong><span>Clientes felices</span></div>
-        <div class="stat"><strong class="grad-txt" data-contar="48">0</strong><span>Marcas y tiendas</span></div>
+        <div class="stat"><strong class="grad-txt" id="statProductos">0</strong><span>Productos seleccionados</span></div>
+        <div class="stat"><strong class="grad-txt" id="statCategorias">0</strong><span>Categorías</span></div>
+        <div class="stat"><strong class="grad-txt">100%</strong><span>Compra protegida</span></div>
       </div>
     </div>
 
@@ -105,9 +107,9 @@
       <div class="blob"></div>
       <div class="tarjetas-flotantes">
         <div class="cf-big">🛍️</div>
-        <div class="card-flota cf-1"><span class="ico">🎧</span><span><b>Audífonos TWS</b><small>S/ 89 · -40%</small></span></div>
-        <div class="card-flota cf-2"><span class="ico">⌚</span><span><b>Smartwatch GPS</b><small>S/ 129 · Top ventas</small></span></div>
-        <div class="card-flota cf-3"><span class="ico">🚚</span><span><b>Envío gratis</b><small>En productos seleccionados</small></span></div>
+        <div class="card-flota cf-1"><span class="ico">🔌</span><span><b>Carga rápida</b><small>Cargadores y cables GaN</small></span></div>
+        <div class="card-flota cf-2"><span class="ico">🔋</span><span><b>Power banks</b><small>Magnéticos y de alta potencia</small></span></div>
+        <div class="card-flota cf-3"><span class="ico">💅</span><span><b>Cuidado personal</b><small>Novedades cada semana</small></span></div>
       </div>
     </div>
   </div>
@@ -179,21 +181,24 @@
   </div>
 </section>
 
-<!-- ══════════════ OFERTA CON CONTADOR ══════════════ -->
+<!-- ══════════════ POR QUÉ MOSTRAMOS "VER PRECIO" ══════════════ -->
 <section class="seccion" style="padding-top:0">
   <div class="contenedor reveal">
     <div class="oferta">
       <div>
-        <span class="eyebrow">⏳ Por tiempo limitado</span>
-        <h2>Semana de <span class="grad-txt">locura</span>: hasta 45% off</h2>
-        <p>Los precios de estas ofertas cambian cuando termina la promoción de la tienda. Si te gusta algo, no lo dejes para mañana.</p>
-        <a href="#catalogo" class="btn btn-primario">Ver ofertas activas</a>
+        <span class="eyebrow">💡 Por qué verás “Ver precio”</span>
+        <h2>El precio que ves es <span class="grad-txt">el de verdad</span></h2>
+        <p>
+          Los precios en AliExpress cambian cada pocos días por promociones y cupones.
+          En vez de mostrarte un número viejo que después no coincide, te llevamos
+          directo a la tienda para que veas el precio real del momento.
+        </p>
+        <a href="#catalogo" class="btn btn-primario">Ver el catálogo</a>
       </div>
-      <div class="reloj" id="reloj">
-        <div class="caja"><b id="rDias">00</b><small>Días</small></div>
-        <div class="caja"><b id="rHoras">00</b><small>Horas</small></div>
-        <div class="caja"><b id="rMin">00</b><small>Min</small></div>
-        <div class="caja"><b id="rSeg">00</b><small>Seg</small></div>
+      <div class="reloj">
+        <div class="caja"><b>🔎</b><small>Verificado</small></div>
+        <div class="caja"><b>🛡️</b><small>Protegido</small></div>
+        <div class="caja"><b>🌎</b><small>A todo Perú</small></div>
       </div>
     </div>
   </div>
@@ -228,7 +233,13 @@
   </div>
 </section>
 
-<!-- ══════════════ TESTIMONIOS ══════════════ -->
+<!-- ══════════════ TESTIMONIOS ══════════════
+     SECCIÓN OCULTA A PROPÓSITO.
+     Los tres testimonios que había aquí eran de ejemplo: nombres y frases
+     inventados, y citaban productos que ya no están en el catálogo. Publicar
+     reseñas falsas en una tienda real engaña al comprador y puede costarte la
+     cuenta de afiliado. Cuando tengas clientes de verdad, pídeles permiso para
+     publicar su comentario y descomenta esta sección con sus frases reales.
 <section class="seccion" style="padding-top:0">
   <div class="contenedor">
     <div class="centrado reveal">
@@ -238,22 +249,13 @@
     <div class="testimonios reveal">
       <article class="testi">
         <span class="estrellas">★★★★★</span>
-        <p>“Compré los audífonos que recomendaron y llegaron en 12 días. La calidad por el precio es una locura.”</p>
-        <div class="quien"><span class="avatar">M</span><span><b>María Q.</b><small>Lima</small></span></div>
-      </article>
-      <article class="testi">
-        <span class="estrellas">★★★★★</span>
-        <p>“Me ahorraron horas buscando. Ya venían filtrados los vendedores buenos, eso vale oro.”</p>
-        <div class="quien"><span class="avatar">J</span><span><b>Jorge A.</b><small>Arequipa</small></span></div>
-      </article>
-      <article class="testi">
-        <span class="estrellas">★★★★☆</span>
-        <p>“El teclado mecánico llegó tal cual la foto. Les escribí con una duda y me respondieron rapidísimo.”</p>
-        <div class="quien"><span class="avatar">C</span><span><b>Carla R.</b><small>Trujillo</small></span></div>
+        <p>“Aquí va el comentario real de tu cliente.”</p>
+        <div class="quien"><span class="avatar">N</span><span><b>Nombre C.</b><small>Ciudad</small></span></div>
       </article>
     </div>
   </div>
 </section>
+     ══════════════════════════════════════════ -->
 
 <!-- ══════════════ FAQ ══════════════ -->
 <section class="seccion" id="faq" style="padding-top:0">
@@ -384,7 +386,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="assets/js/products.js?v=5"></script>
-<script src="assets/js/app.js?v=5"></script>
+<script src="assets/js/products.js?v=6"></script>
+<script src="assets/js/app.js?v=6"></script>
 </body>
 </html>
