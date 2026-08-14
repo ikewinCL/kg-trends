@@ -317,6 +317,23 @@ const PRODUCTOS = [
     destacado: false
   },
   {
+    id: 20,
+    nombre: 'Cable UGREEN Uno USB-C a USB-C PD 100W de carga rápida',
+    categoria: 'tecnologia',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c3z3WAkJ',
+    img: 'https://ae01.alicdn.com/kf/S6048ddb2efa24377a0cac3f7eb0c2aacZ.jpg_640x640.jpg',
+    emoji: '🔋',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Cable USB-C a USB-C que soporta hasta 100W con Power Delivery, así que carga rápido y también transfiere datos. Compatible con iPhone 15, 16 y 17, Samsung, Xiaomi y MacBook.',
+    destacado: true
+  },
+  {
     id: 19,
     nombre: 'Cargador UGREEN 65W GaN diseño Robot con PD 3.0 y QC 4.0',
     categoria: 'tecnologia',
