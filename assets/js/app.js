@@ -54,6 +54,16 @@
             </div>`;
   }
 
+  /* El verde señala un beneficio. Solo se usa cuando el envío es realmente
+     gratis; si tiene costo va en gris neutro, para no dar a entender lo que
+     no es. La regla se decide por el propio texto de "envio". */
+  const envioEsGratis = p => /gratis|free/i.test(p.envio || '');
+
+  function bloqueEnvio(p) {
+    const gratis = envioEsGratis(p);
+    return `<span class="p-envio${gratis ? ' gratis' : ''}">${gratis ? '🚚' : '📦'} ${escapar(p.envio)}</span>`;
+  }
+
   /* Solo se pinta si el producto trae valoración real. */
   function bloqueRating(p) {
     if (!p.rating) return '';
@@ -201,7 +211,7 @@
 
           ${bloqueRating(p)}
           ${bloquePrecio(p)}
-          <span class="p-envio">🚚 ${escapar(p.envio)}</span>
+          ${bloqueEnvio(p)}
 
           <div class="p-acciones">
             <a class="btn btn-primario" href="${escapar(p.url)}" target="_blank" rel="noopener sponsored"

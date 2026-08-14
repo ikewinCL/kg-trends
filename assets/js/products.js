@@ -27,7 +27,11 @@
                     el diseño de color con emoji)
      emoji       -> se muestra cuando no hay imagen
      etiqueta    -> texto de la cinta: "Nuevo", "Top ventas", "" ...
-     envio       -> texto corto de envío
+     envio       -> texto corto de envío. IMPORTANTE: si el texto contiene la
+                    palabra "gratis" se pinta en VERDE con el ícono 🚚; en
+                    cualquier otro caso sale en gris con 📦. El verde está
+                    reservado al envío realmente gratuito, para no dar a
+                    entender algo que no es
      descripcion -> 1 o 2 frases que se ven en la ficha
      destacado   -> true para que aparezca en "Lo más buscado"
    ============================================================ */
@@ -325,8 +329,8 @@ const PRODUCTOS = [
     img: 'https://ae01.alicdn.com/kf/Haf02c8b968904fac86b22a66ed502d35g.jpg_640x640.jpg',
     emoji: '🪒',
     etiqueta: 'Nuevo',
-    envio: 'Envío desde AliExpress',
-    descripcion: 'Maquinilla de afeitar de seguridad para hombre, con nivel de agresividad ajustable. Una alternativa clásica y duradera a las de cartucho desechable.',
+    envio: 'Envío con costo, calculado en AliExpress',
+    descripcion: 'Maquinilla de afeitar de seguridad para hombre, con nivel de agresividad ajustable. Una alternativa clásica y duradera a las de cartucho desechable. El costo de envío se calcula al pagar, según tu dirección.',
     destacado: true
   },
   {

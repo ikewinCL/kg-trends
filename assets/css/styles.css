@@ -392,7 +392,9 @@ select.orden option{ background:var(--bg-2); color:var(--txt); }
 .p-precio .off{ font-size:.72rem; font-weight:800; color:var(--green); background:rgba(43,217,139,.12); padding:.15rem .45rem; border-radius:6px; }
 /* Productos sin precio fijo: el número se reemplaza por "Ver precio" */
 .p-precio .ver-precio{ font-size:1.1rem; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-.p-envio{ font-size:.78rem; color:var(--green); }
+/* Gris por defecto; el verde queda reservado al envío realmente gratis */
+.p-envio{ font-size:.78rem; color:var(--muted); }
+.p-envio.gratis{ color:var(--green); }
 .p-acciones{ display:flex; gap:.5rem; margin-top:.6rem; }
 .p-acciones .btn{ padding:.7rem 1rem; font-size:.86rem; flex:1; }
 .btn-ver{ width:44px; flex:0 0 44px !important; padding:0 !important; }
