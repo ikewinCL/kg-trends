@@ -22,7 +22,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+<!-- El ?v= es un rompe-caché. GitHub Pages guarda los archivos 10 minutos en
+     el navegador del visitante, así que sin esto los cambios recién se ven
+     un rato después. Al subir cambios hay que subir este número (v=2, v=3...)
+     en las 3 etiquetas de este archivo y en el 404.html. -->
+<link rel="stylesheet" href="assets/css/styles.css?v=2">
 </head>
 <body>
 
@@ -127,7 +131,7 @@
       </div>
       <div class="beneficio">
         <span class="ico">💬</span>
-        <span><b>Te asesoramos</b><small>¿Dudas con un producto? Escríbenos por WhatsApp.</small></span>
+        <span><b>Te asesoramos</b><small>¿Dudas con un producto? Escríbenos y te ayudamos.</small></span>
       </div>
     </div>
   </div>
@@ -244,7 +248,7 @@
       </article>
       <article class="testi">
         <span class="estrellas">★★★★☆</span>
-        <p>“El teclado mecánico llegó tal cual la foto. Les escribí por WhatsApp y me respondieron rapidísimo.”</p>
+        <p>“El teclado mecánico llegó tal cual la foto. Les escribí con una duda y me respondieron rapidísimo.”</p>
         <div class="quien"><span class="avatar">C</span><span><b>Carla R.</b><small>Trujillo</small></span></div>
       </article>
     </div>
@@ -274,11 +278,11 @@
       </details>
       <details class="faq-item">
         <summary>¿Qué pasa si el producto llega dañado?</summary>
-        <div class="respuesta">Se gestiona con la garantía de la tienda (devolución o reembolso). Escríbenos por WhatsApp y te acompañamos en el proceso paso a paso.</div>
+        <div class="respuesta">Se gestiona con la garantía de la tienda (devolución o reembolso). Escríbenos y te acompañamos en el proceso paso a paso.</div>
       </details>
       <details class="faq-item">
         <summary>¿Puedo pedir un producto que no está en la web?</summary>
-        <div class="respuesta">¡Claro! Mándanos el link o una foto por WhatsApp y te buscamos la mejor opción con buen vendedor y buen precio.</div>
+        <div class="respuesta">¡Claro! Mándanos el link o una foto y te buscamos la mejor opción con buen vendedor y buen precio.</div>
       </details>
     </div>
   </div>
@@ -313,7 +317,7 @@
           <a href="#" id="lnkInstagram" aria-label="Instagram" title="Instagram">📷</a>
           <a href="#" id="lnkTiktok" aria-label="TikTok" title="TikTok">🎵</a>
           <a href="#" id="lnkFacebook" aria-label="Facebook" title="Facebook">👍</a>
-          <a href="#" id="lnkWhatsapp" aria-label="WhatsApp" title="WhatsApp">💬</a>
+          <a href="#" id="lnkWhatsapp" aria-label="Escríbenos" title="Escríbenos">✉️</a>
         </div>
       </div>
 
@@ -340,7 +344,7 @@
       <div>
         <h4>Contacto</h4>
         <ul>
-          <li><a href="#" id="lnkWaFooter">WhatsApp</a></li>
+          <li><a href="#" id="lnkWaFooter">Escríbenos</a></li>
           <li><a href="#" id="lnkMail">Correo</a></li>
           <li><a href="#faq">Trabaja con nosotros</a></li>
         </ul>
@@ -355,7 +359,8 @@
 </footer>
 
 <!-- ══════════════ FLOTANTES ══════════════ -->
-<a href="#" class="wa" id="btnWhatsapp" aria-label="Escríbenos por WhatsApp" title="Escríbenos por WhatsApp">💬</a>
+<!-- Arranca como botón de correo; el JS lo convierte en WhatsApp si hay número real -->
+<a href="#" class="wa es-correo" id="btnWhatsapp" aria-label="Escríbenos" title="Escríbenos">✉️</a>
 <button class="arriba" id="btnArriba" aria-label="Volver arriba">↑</button>
 
 <!-- Panel de favoritos -->
@@ -379,7 +384,7 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="assets/js/products.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="assets/js/products.js?v=2"></script>
+<script src="assets/js/app.js?v=2"></script>
 </body>
 </html>

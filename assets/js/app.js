@@ -375,7 +375,16 @@
       if (!el) return;
       el.href = destino;
       if (waValido) {
+        // El HTML arranca en modo correo: aquí se convierte a WhatsApp
         el.target = '_blank'; el.rel = 'noopener';
+        el.classList.remove('es-correo');
+        if (el.id === 'lnkWaFooter') {
+          el.textContent = 'WhatsApp';
+        } else {
+          el.textContent = '💬';
+          el.title = 'Escríbenos por WhatsApp';
+          el.setAttribute('aria-label', 'Escríbenos por WhatsApp');
+        }
       } else {
         el.removeAttribute('target');
         if (el.id === 'btnWhatsapp') {
@@ -389,6 +398,7 @@
         } else {
           el.textContent = '✉️';
           el.title = 'Escríbenos por correo';
+          el.setAttribute('aria-label', 'Escríbenos por correo');
         }
       }
     });
