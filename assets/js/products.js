@@ -317,6 +317,40 @@ const PRODUCTOS = [
     destacado: false
   },
   {
+    id: 19,
+    nombre: 'Cargador UGREEN 65W GaN diseño Robot con PD 3.0 y QC 4.0',
+    categoria: 'tecnologia',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c2RlwECR',
+    img: 'https://ae01.alicdn.com/kf/A01fe1134522f4918b0262d4ee61d41c3v.jpg_640x640.jpg',
+    emoji: '🤖',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Cargador GaN de 65W con diseño de robot, compatible con PD 3.0, PPS y QuickCharge 4.0 y 3.0. Carga MacBook, laptops, tablets e iPhone 15, 16 y 17 Pro. Viene con enchufe plano tipo americano, que entra en los tomacorrientes de Perú.',
+    destacado: true
+  },
+  {
+    id: 18,
+    nombre: 'Cargador UGREEN 100W GaN USB-C con carga rápida PD y QC4.0',
+    categoria: 'tecnologia',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c3X9NnYb',
+    img: 'https://ae01.alicdn.com/kf/Sa6e08173f0114b1590c2b96d87091af8S.jpg_640x640.jpg',
+    emoji: '🔌',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Cargador de 100W con tecnología GaN: más compacto y menos caliente que uno convencional. Sirve para MacBook, laptops y tablets, y trae carga rápida PD para iPhone 15, 16 y 17 Pro, además de QuickCharge 4.0 y 3.0.',
+    destacado: true
+  },
+  {
     // ⭐ PRIMER PRODUCTO REAL, con link de afiliado propio.
     // precio: null hace que la web muestre "Ver precio" y mande a AliExpress.
     // Si quieres mostrar el número, reemplaza null por el precio en soles.
