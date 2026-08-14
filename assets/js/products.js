@@ -67,6 +67,23 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    id: 29,
+    nombre: 'Juego de destornilladores magnéticos 40 en 1 con trinquete',
+    categoria: 'tecnologia',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4TXc8fH',
+    img: 'https://ae01.alicdn.com/kf/S38364f39d55c4f8a99d2e3def11559a22.jpg_640x640.jpg',
+    emoji: '🪛',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Set de 40 puntas magnéticas con mango desmontable y cabezal de trinquete que gira 180°, con mecanismo de 45 dientes para trabajar en espacios estrechos. Ideal para abrir celulares, laptops, consolas y arreglos de casa.',
+    destacado: true
+  },
+  {
     id: 28,
     nombre: 'Set de cortaúñas y tijeras de pedicura en acero inoxidable',
     categoria: 'belleza',
