@@ -67,6 +67,23 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    id: 32,
+    nombre: 'Muñecos de bloques para armar: capibara, bala y ratón',
+    categoria: 'hogar',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c3YG8O7H',
+    img: 'https://ae01.alicdn.com/kf/Sa7de6ef25da2452e984ef9274751efc1a.jpg_640x640.jpg',
+    emoji: '🐹',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Figuritas de bloques tipo caricatura para armar y dejar de adorno en el escritorio o la repisa. Buen regalo de cumpleaños, y entretienen mientras se arman. Revisa en la tienda cuál modelo eliges.',
+    destacado: true
+  },
+  {
     id: 31,
     nombre: 'Cactus en maceta para armar, micro bloques de construcción',
     categoria: 'hogar',
