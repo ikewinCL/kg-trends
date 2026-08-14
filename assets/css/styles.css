@@ -528,6 +528,8 @@ select.orden option{ background:var(--bg-2); color:var(--txt); }
   transition:transform .25s;
 }
 .wa:hover{ transform:scale(1.1) translateY(-3px); }
+/* Cuando aún no hay número de WhatsApp, el botón flotante escribe por correo */
+.wa.es-correo{ background:var(--grad); box-shadow:0 12px 30px rgba(139,92,246,.45); }
 
 .arriba{
   position:fixed; right:1.25rem; bottom:5.5rem; z-index:45;

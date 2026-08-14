@@ -39,8 +39,11 @@
 const CONFIG = {
   marca: 'K&G Trends',
   moneda: 'S/',
-  whatsapp: '51999999999',          // <-- CAMBIA por tu número (código de país sin +)
-  email: 'hola@kgtrends.com',       // <-- CAMBIA por tu correo
+  // Mientras whatsapp siga siendo '51999999999', los botones de WhatsApp
+  // escriben por correo. Al poner el número real (código de país sin el +,
+  // ej. '51987654321') vuelven a WhatsApp automáticamente.
+  whatsapp: '51999999999',          // <-- FALTA: tu número real
+  email: 'kyg.lozano.z@gmail.com',
   instagram: 'https://instagram.com/',
   tiktok: 'https://tiktok.com/',
   facebook: 'https://facebook.com/'

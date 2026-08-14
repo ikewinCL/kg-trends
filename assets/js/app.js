@@ -354,12 +354,43 @@
 
   /* ---------- Enlaces de contacto ---------- */
   function enlacesContacto() {
-    const wa = 'https://wa.me/' + CONFIG.whatsapp +
-      '?text=' + encodeURIComponent('¡Hola K&G Trends! Vi su web y quiero información sobre un producto 🛍️');
+    const saludo = '¡Hola K&G Trends! Vi su web y quiero información sobre un producto 🛍️';
+
+    /* Un WhatsApp de relleno es peor que ninguno: el cliente abre un chat con
+       un número inexistente y se va. Mientras CONFIG.whatsapp siga siendo el
+       ejemplo, los botones de WhatsApp escriben por correo. En cuanto se ponga
+       el número real, vuelven a ser WhatsApp solos. */
+    // Se aceptan formatos como "+51 987 654 321": se limpia todo lo que no
+    // sea dígito, así el número funciona aunque se escriba con + o espacios.
+    const numero = String(CONFIG.whatsapp || '').replace(/\D/g, '');
+    const waValido = numero.length >= 8 && numero.length <= 15 && numero !== '51999999999';
+
+    const destino = waValido
+      ? 'https://wa.me/' + numero + '?text=' + encodeURIComponent(saludo)
+      : 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('Consulta desde K&G Trends') +
+        '&body=' + encodeURIComponent(saludo);
 
     ['#btnWhatsapp', '#lnkWhatsapp', '#lnkWaFooter'].forEach(sel => {
       const el = $(sel);
-      if (el) { el.href = wa; el.target = '_blank'; el.rel = 'noopener'; }
+      if (!el) return;
+      el.href = destino;
+      if (waValido) {
+        el.target = '_blank'; el.rel = 'noopener';
+      } else {
+        el.removeAttribute('target');
+        if (el.id === 'btnWhatsapp') {
+          el.textContent = '✉️';
+          el.classList.add('es-correo');
+          el.setAttribute('aria-label', 'Escríbenos por correo');
+          el.title = 'Escríbenos por correo';
+        } else if (el.id === 'lnkWaFooter') {
+          // El pie ya tiene su enlace de correo: se oculta para no duplicarlo
+          (el.closest('li') || el).style.display = 'none';
+        } else {
+          el.textContent = '✉️';
+          el.title = 'Escríbenos por correo';
+        }
+      }
     });
 
     const mail = $('#lnkMail');
