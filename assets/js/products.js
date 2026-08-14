@@ -317,6 +317,23 @@ const PRODUCTOS = [
     destacado: false
   },
   {
+    id: 24,
+    nombre: 'Soporte plegable de aluminio para laptop y tablet hasta 17"',
+    categoria: 'tecnologia',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4sAwxWX',
+    img: 'https://ae01.alicdn.com/kf/S9c8a108dfbf74803bed3415d8f20c1ef2.jpg_640x640.jpg',
+    emoji: '💻',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Soporte de aleación de aluminio con altura y ángulo ajustables, para laptops y tablets de hasta 17". Levanta la pantalla a la altura de tus ojos y deja circular el aire por debajo para que el equipo no se caliente. Se pliega para llevarlo.',
+    destacado: true
+  },
+  {
     id: 23,
     nombre: 'Cable retráctil Baseus 240W USB-C con clip mosquetón',
     categoria: 'tecnologia',
