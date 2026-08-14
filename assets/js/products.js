@@ -67,6 +67,23 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    id: 28,
+    nombre: 'Set de cortaúñas y tijeras de pedicura en acero inoxidable',
+    categoria: 'belleza',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4Niy5Vl',
+    img: 'https://ae01.alicdn.com/kf/S3a95fe479cba493fa92f7ae2474f7914t.jpg_640x640.jpg',
+    emoji: '✂️',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Juego de cortaúñas, tijeras de pedicura y cuchara limpiadora de oídos, todo en acero inoxidable. Para tener en casa y no andar prestando el de nadie.',
+    destacado: true
+  },
+  {
     id: 27,
     nombre: 'Crimpadora RJ45 todo en uno para Cat5e, Cat6, Cat7 y Cat8',
     categoria: 'tecnologia',
