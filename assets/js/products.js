@@ -13,10 +13,13 @@
      id          -> número único (no repitas ninguno)
      nombre      -> título del producto
      categoria   -> debe existir en CATEGORIAS (más abajo)
-     precio      -> precio de venta (número, sin símbolo)
+     precio      -> precio de venta (número, sin símbolo).
+                    Pon null si no lo sabes: la web mostrará "Ver precio" y
+                    mandará a la tienda. Es lo más seguro con AliExpress,
+                    porque sus precios cambian cada pocos días
      precioAntes -> precio tachado. Pon null si no hay descuento
-     rating      -> de 0 a 5 (ej. 4.7)
-     reviews     -> cantidad de reseñas
+     rating      -> de 0 a 5 (ej. 4.7). null si no lo sabes: se oculta
+     reviews     -> cantidad de reseñas. null si no la sabes
      tienda      -> "aliexpress" o "amazon"
      url         -> TU LINK DE AFILIADO. Aquí va el enlace que te
                     da AliExpress Portals o Amazon Afiliados
@@ -305,6 +308,26 @@ const PRODUCTOS = [
     envio: 'Llega en 7-12 días',
     descripcion: 'Filtro de carbón activado, bomba silenciosa y luz LED nocturna.',
     destacado: false
+  },
+  {
+    // ⭐ PRIMER PRODUCTO REAL, con link de afiliado propio.
+    // precio: null hace que la web muestre "Ver precio" y mande a AliExpress.
+    // Si quieres mostrar el número, reemplaza null por el precio en soles.
+    id: 17,
+    nombre: 'QSHAVE Maquinilla de afeitar de seguridad ajustable para hombre',
+    categoria: 'belleza',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c3Q0b5TD',
+    img: 'https://ae01.alicdn.com/kf/Haf02c8b968904fac86b22a66ed502d35g.jpg_640x640.jpg',
+    emoji: '🪒',
+    etiqueta: 'Nuevo',
+    envio: 'Envío desde AliExpress',
+    descripcion: 'Maquinilla de afeitar de seguridad para hombre, con nivel de agresividad ajustable. Una alternativa clásica y duradera a las de cartucho desechable.',
+    destacado: true
   },
   {
     id: 16,

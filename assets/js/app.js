@@ -30,11 +30,38 @@
   //   = espacio duro, para que "S/ 145" nunca se parta en dos líneas
   const precio = n => CONFIG.moneda + ' ' + Number(n).toLocaleString('es-PE', { minimumFractionDigits: 0 });
 
-  const descuento = p => (p.precioAntes ? Math.round((1 - p.precio / p.precioAntes) * 100) : 0);
+  const descuento = p =>
+    (p.precio != null && p.precioAntes ? Math.round((1 - p.precio / p.precioAntes) * 100) : 0);
 
   function estrellas(r) {
     const llenas = Math.round(r);
     return '★'.repeat(llenas) + '☆'.repeat(5 - llenas);
+  }
+
+  /* Bloque de precio. Si el producto no tiene precio (precio: null) se muestra
+     "Ver precio" en vez de un número: los precios de AliExpress cambian seguido
+     y es preferible mandar a la tienda antes que mostrar un dato viejo. */
+  function bloquePrecio(p) {
+    if (p.precio == null) {
+      return `<div class="p-precio">
+                <span class="ahora ver-precio">Ver precio</span>
+              </div>`;
+    }
+    const off = descuento(p);
+    return `<div class="p-precio">
+              <span class="ahora">${precio(p.precio)}</span>
+              ${p.precioAntes ? `<span class="antes">${precio(p.precioAntes)}</span><span class="off">-${off}%</span>` : ''}
+            </div>`;
+  }
+
+  /* Solo se pinta si el producto trae valoración real. */
+  function bloqueRating(p) {
+    if (!p.rating) return '';
+    const n = p.reviews ? ` (${p.reviews.toLocaleString('es-PE')})` : '';
+    return `<div class="p-rating">
+              <span class="estrellas">${estrellas(p.rating)}</span>
+              <span>${p.rating}${n}</span>
+            </div>`;
   }
 
   const nombreCategoria = id => (CATEGORIAS.find(c => c.id === id) || { nombre: id }).nombre;
@@ -46,9 +73,35 @@
 
   function media(p, claseEmoji) {
     return p.img
-      ? `<img src="${escapar(p.img)}" alt="${escapar(p.nombre)}" loading="lazy">`
+      ? `<img src="${escapar(p.img)}" alt="${escapar(p.nombre)}" loading="lazy"
+              data-emoji="${escapar(p.emoji || '🛍️')}" data-clase="${claseEmoji}">`
       : `<span class="${claseEmoji}">${p.emoji || '🛍️'}</span>`;
   }
+
+  /* Red de seguridad para las fotos alojadas en servidores ajenos (AliExpress
+     y Amazon): si la imagen desaparece, la tarjeta muestra el emoji en vez de
+     quedar rota. Los eventos "load" y "error" de <img> no burbujean, por eso
+     se escuchan en fase de captura. */
+  function fotoPorEmoji(img) {
+    const contenedor = img.parentElement;
+    const clase = img.dataset.clase || 'emoji';
+    const emoji = img.dataset.emoji;
+    img.remove();
+    contenedor.insertAdjacentHTML('beforeend', `<span class="${clase}">${emoji}</span>`);
+  }
+
+  document.addEventListener('error', e => {
+    const img = e.target;
+    if (img.tagName === 'IMG' && img.dataset.emoji) fotoPorEmoji(img);
+  }, true);
+
+  /* AliExpress no responde 404 cuando una foto ya no existe: entrega un
+     marcador gris de 100x100. Como las fotos de producto son de 640px o más,
+     cualquier imagen diminuta se trata como rota. */
+  document.addEventListener('load', e => {
+    const img = e.target;
+    if (img.tagName === 'IMG' && img.dataset.emoji && img.naturalWidth < 200) fotoPorEmoji(img);
+  }, true);
 
   function toast(msg) {
     const t = $('#toast');
@@ -94,9 +147,12 @@
       );
     }
 
+    // Los productos sin precio van siempre al final al ordenar por precio
+    const pr = (p, sinPrecio) => (p.precio == null ? sinPrecio : p.precio);
+
     const ordenar = {
-      'precio-asc':  (a, b) => a.precio - b.precio,
-      'precio-desc': (a, b) => b.precio - a.precio,
+      'precio-asc':  (a, b) => pr(a, Infinity) - pr(b, Infinity),
+      'precio-desc': (a, b) => pr(b, -Infinity) - pr(a, -Infinity),
       'rating':      (a, b) => b.rating - a.rating,
       'descuento':   (a, b) => descuento(b) - descuento(a),
       'destacado':   (a, b) => (b.destacado === true) - (a.destacado === true) || b.rating - a.rating
@@ -128,7 +184,6 @@
     }
 
     grid.innerHTML = lista.map((p, i) => {
-      const off = descuento(p);
       const esFav = estado.favoritos.includes(p.id);
       return `
       <article class="producto" style="animation-delay:${Math.min(i * 45, 400)}ms">
@@ -144,15 +199,8 @@
           <span class="p-cat">${escapar(nombreCategoria(p.categoria))}</span>
           <h3 class="p-nombre">${escapar(p.nombre)}</h3>
 
-          <div class="p-rating">
-            <span class="estrellas">${estrellas(p.rating)}</span>
-            <span>${p.rating} (${p.reviews.toLocaleString('es-PE')})</span>
-          </div>
-
-          <div class="p-precio">
-            <span class="ahora">${precio(p.precio)}</span>
-            ${p.precioAntes ? `<span class="antes">${precio(p.precioAntes)}</span><span class="off">-${off}%</span>` : ''}
-          </div>
+          ${bloqueRating(p)}
+          ${bloquePrecio(p)}
           <span class="p-envio">🚚 ${escapar(p.envio)}</span>
 
           <div class="p-acciones">
@@ -205,7 +253,7 @@
         <span class="mini">${media(p, '')}</span>
         <span class="fav-txt">
           <b>${escapar(p.nombre)}</b>
-          <span class="fav-precio">${precio(p.precio)}</span>
+          <span class="fav-precio">${p.precio == null ? 'Ver precio' : precio(p.precio)}</span>
         </span>
         <button class="quitar" data-fav="${p.id}" aria-label="Quitar de favoritos">×</button>
       </div>`).join('') +
@@ -222,22 +270,16 @@
   function abrirModal(id) {
     const p = PRODUCTOS.find(x => x.id === id);
     if (!p) return;
-    const off = descuento(p);
 
     $('#modalMedia').innerHTML = media(p, 'emoji');
     $('#modalInfo').innerHTML = `
       <span class="p-cat">${escapar(nombreCategoria(p.categoria))} · ${nombreTienda(p.tienda)}</span>
       <h3>${escapar(p.nombre)}</h3>
-      <div class="p-rating">
-        <span class="estrellas">${estrellas(p.rating)}</span>
-        <span>${p.rating} · ${p.reviews.toLocaleString('es-PE')} reseñas</span>
-      </div>
+      ${bloqueRating(p)}
       <p class="desc">${escapar(p.descripcion)}</p>
-      <div class="p-precio">
-        <span class="ahora">${precio(p.precio)}</span>
-        ${p.precioAntes ? `<span class="antes">${precio(p.precioAntes)}</span><span class="off">-${off}%</span>` : ''}
-      </div>
+      ${bloquePrecio(p)}
       <ul class="lista-check">
+        ${p.precio == null ? `<li>Precio actualizado directamente en ${nombreTienda(p.tienda)}</li>` : ''}
         <li>${escapar(p.envio)}</li>
         <li>Pago seguro en ${nombreTienda(p.tienda)}, con protección al comprador</li>
         <li>Producto verificado por el equipo de K&amp;G Trends</li>
