@@ -67,6 +67,23 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    id: 33,
+    nombre: 'Electroestimulador TENS digital de 4 canales, recargable',
+    categoria: 'fitness',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4O8cmkr',
+    img: 'https://ae01.alicdn.com/kf/S807307eb8c124d7b87be97e4e0533bf1C.jpg_640x640.jpg',
+    emoji: '⚡',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Electroestimulador muscular TENS con 4 canales, 20 niveles de intensidad y batería recargable, con pantalla digital. Consulta a un profesional de salud antes de usarlo, sobre todo si tienes marcapasos, alguna condición cardíaca o estás embarazada.',
+    destacado: true
+  },
+  {
     id: 32,
     nombre: 'Muñecos de bloques para armar: capibara, bala y ratón',
     categoria: 'hogar',
