@@ -317,6 +317,23 @@ const PRODUCTOS = [
     destacado: false
   },
   {
+    id: 26,
+    nombre: 'Kit de manicura y pedicura con estuche portátil',
+    categoria: 'belleza',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4pnVxuj',
+    img: 'https://ae01.alicdn.com/kf/Sb5542c44538540a8868f76b9cf69d3eci.jpg_640x640.jpg',
+    emoji: '💅',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Set de manicura y pedicura con cortaúñas, lima y limpiador de oídos, en un estuche que cabe en la cartera o el maletín. Hay presentaciones de 1 y de 5 piezas: revisa cuál eliges antes de pagar.',
+    destacado: true
+  },
+  {
     id: 25,
     nombre: 'Esponja exfoliante 3D para ducha, elimina la piel muerta',
     categoria: 'belleza',
