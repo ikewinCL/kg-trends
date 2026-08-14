@@ -317,6 +317,23 @@ const PRODUCTOS = [
     destacado: false
   },
   {
+    id: 22,
+    nombre: 'Baseus power bank 20800mAh 145W con pantalla digital',
+    categoria: 'tecnologia',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c3SvlvWJ',
+    img: 'https://ae01.alicdn.com/kf/Sc6759b45d683471d844beae21173fd3dt.jpg_640x640.jpg',
+    emoji: '⚡',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Batería externa de 20800 mAh y 145W en total, con dos puertos USB-A y uno USB-C que entrega hasta 100W: suficiente para cargar una laptop. La pantalla digital te muestra la carga exacta que le queda.',
+    destacado: true
+  },
+  {
     id: 21,
     nombre: 'Baseus power bank magnético del tamaño de una tarjeta',
     categoria: 'tecnologia',
