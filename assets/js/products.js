@@ -317,6 +317,23 @@ const PRODUCTOS = [
     destacado: false
   },
   {
+    id: 23,
+    nombre: 'Cable retráctil Baseus 240W USB-C con clip mosquetón',
+    categoria: 'tecnologia',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4NnOHmP',
+    img: 'https://ae01.alicdn.com/kf/S91d51f8137a64242918b3672a72fa791p.jpg_640x640.jpg',
+    emoji: '🔗',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Cable USB-C a USB-C de hasta 240W que se recoge solo con un toque: nunca más un nudo en la mochila. Trae clip mosquetón para colgarlo de las llaves. Para iPhone, MacBook y cualquier equipo USB-C.',
+    destacado: true
+  },
+  {
     id: 22,
     nombre: 'Baseus power bank 20800mAh 145W con pantalla digital',
     categoria: 'tecnologia',
