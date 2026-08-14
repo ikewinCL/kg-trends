@@ -68,6 +68,40 @@ const CATEGORIAS = [
 
 const PRODUCTOS = [
   {
+    id: 48,
+    nombre: 'Almohadillas de gel de repuesto para masajeadores TENS y EMS',
+    categoria: 'fitness',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4k5mBp9',
+    img: 'https://ae01.alicdn.com/kf/S1140fcade0b8445ab644b1907ca3e9dds.png_640x640.png',
+    emoji: '🩹',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Parches de gel de repuesto para masajeadores y electroestimuladores TENS o EMS. Las almohadillas pierden adherencia con el uso y estas devuelven el contacto original. Revisa que el conector coincida con el de tu aparato antes de comprar.',
+    destacado: true
+  },
+  {
+    id: 47,
+    nombre: 'Mini masajeador cervical de pulso eléctrico, 8 modos',
+    categoria: 'fitness',
+    precio: null,
+    precioAntes: null,
+    rating: null,
+    reviews: null,
+    tienda: 'aliexpress',
+    url: 'https://s.click.aliexpress.com/e/_c4rELaDZ',
+    img: 'https://ae01.alicdn.com/kf/Se3f0660c5bc24fe396fe2e2942b5f330d.jpg_640x640.jpg',
+    emoji: '💆',
+    etiqueta: 'Nuevo',
+    envio: 'Envío calculado en AliExpress',
+    descripcion: 'Masajeador de pulso eléctrico con 8 modos y 19 niveles de intensidad, para cuello, hombros, espalda y piernas. Es pequeño y se sujeta solo, así que puedes usarlo en el escritorio. Consulta a un profesional de salud antes de usarlo si tienes marcapasos, alguna condición cardíaca o estás embarazada.',
+    destacado: true
+  },
+  {
     id: 46,
     nombre: 'Masajeador inalámbrico de cuello y trapecio con amasamiento 4D',
     categoria: 'fitness',
